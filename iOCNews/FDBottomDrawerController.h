@@ -6,7 +6,7 @@
 //
 //
 
-#import "MMDrawerController+Subclass.h"
+#import <MMDrawerController/MMDrawerController+Subclass.h>
 #import "OCFeedListController.h"
 #import "OCArticleListController.h"
 

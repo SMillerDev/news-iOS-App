@@ -34,9 +34,8 @@
 #import "OCAPIClient.h"
 #import "Feeds.h"
 #import "NSDictionary+HandleNull.h"
-#import "AFNetworking.h"
-#import "SDWebImageDownloader.h"
-#import "UIImageView+WebCache.h"
+#import <SDWebImage/SDWebImageDownloader.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface OCNewsHelper () {
     NSMutableSet *foldersToAdd;
@@ -344,7 +343,7 @@
             }
             NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
             NSString *message = [NSString stringWithFormat:@"The server responded '%@' and the error reported was '%@'", [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode], [error localizedDescription]];
-            NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Error Updating Feeds", @"Title", message, @"Message", nil];
+            NSDictionary *userInfo = @{@"Title": @"Error Updating Feeds", @"Message": message};
             [[NSNotificationCenter defaultCenter] postNotificationName:@"NetworkCompleted" object:self userInfo:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"NetworkError" object:self userInfo:userInfo];
         }];
@@ -353,8 +352,7 @@
             _completionHandler(UIBackgroundFetchResultFailed);
             completionHandlerCalled = YES;
         }
-        NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"Unable to Reach Server", @"Title",
-                                  @"Please check network connection and login.", @"Message", nil];
+        NSDictionary *userInfo = @{@"Title": @"Unable to Reach Server", @"Message": @"Please check network connection and login."};
         [[NSNotificationCenter defaultCenter] postNotificationName:@"NetworkCompleted" object:self userInfo:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"NetworkError" object:self userInfo:userInfo];
     }
@@ -388,7 +386,7 @@
                 }
             }
 
-            NSArray *newFolders = [NSArray arrayWithArray:[folderDict objectForKey:@"folders"]];
+            NSArray *newFolders = [NSArray arrayWithArray:folderDict[@"folders"]];
             
             NSArray *newIds = [newFolders valueForKey:@"id"];
             
@@ -396,7 +394,7 @@
             NSDictionary *nameDict = [NSDictionary dictionaryWithObjects:[newFolders valueForKey:@"name"] forKeys:newIds];
             //NSLog(@"Titles: %@", titleDict);
             [oldFolders enumerateObjectsUsingBlock:^(Folder *folder, NSUInteger idx, BOOL *stop) {
-                NSString *newName = [nameDict objectForKey:folder.myId];
+                NSString *newName = nameDict[folder.myId];
                 if (newName) {
                     folder.name = newName;
                 }

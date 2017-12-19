@@ -30,15 +30,13 @@
  
  *************************************************************************/
 
+#import <MMDrawerController/UIViewController+MMDrawerController.h>
+#import <TSMessages/TSMessage.h>
+#import <AFNetworking/AFNetworking.h>
 #import "OCFeedListController.h"
 #import "OCFeedCell.h"
 #import "OCLoginController.h"
-#import "TSMessage.h"
 #import "OCNewsHelper.h"
-#import "Folder.h"
-#import "Feed.h"
-#import "AFNetworking.h"
-#import "UIViewController+MMDrawerController.h"
 
 @interface OCFeedListController () <UIActionSheetDelegate> {
     NSNumber *currentRenameId;

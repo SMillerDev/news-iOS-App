@@ -30,10 +30,10 @@
  
  *************************************************************************/
 
+#import <PDKeychainBindingsController/PDKeychainBindings.h>
+#import <TSMessages/TSMessage.h>
 #import "OCLoginController.h"
 #import "OCAPIClient.h"
-#import "PDKeychainBindings.h"
-#import "TSMessage.h"
 
 static const NSString *rootPath = @"index.php/apps/news/api/v1-2/";
 

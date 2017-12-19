@@ -31,15 +31,14 @@
  *************************************************************************/
 
 #import "OCWebController.h"
-#import "readable.h"
-#import "HTMLParser.h"
-#import "TUSafariActivity.h"
 #import "OCAPIClient.h"
 #import "OCNewsHelper.h"
-#import <QuartzCore/QuartzCore.h>
 #import "OCSharingProvider.h"
-#import "UIViewController+MMDrawerController.h"
+#import <MMDrawerController/UIViewController+MMDrawerController.h>
+#import <TUSafariActivity/TUSafariActivity.h>
+#import <Objective_C_HMTL_Parser/HTMLParser.h>
 #import "FDTopDrawerController.h"
+#import "readable.h"
 
 #define MIN_FONT_SIZE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 11 : 9)
 #define MAX_FONT_SIZE 30
@@ -424,7 +423,7 @@ const int SWIPE_PREVIOUS = 1;
         [self.backgroundMenuRow setColumns:nil];
         [self.backgroundMenuRow setIsModal:NO];
         [self.backgroundMenuRow setHideOnExpand:NO];
-        self.backgroundMenuRow.isMoreButton = YES;
+//        self.backgroundMenuRow.isMoreButton = YES;
         [self.backgroundMenuRow.button setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
         [[self.menuController.rows objectAtIndex:2 + 1] button].hidden = YES;
         [[self.menuController.rows objectAtIndex:2 + 2] button].hidden = YES;
@@ -632,7 +631,7 @@ const int SWIPE_PREVIOUS = 1;
                     backgroundSepia.closeOnSelect = NO;
                     
                     [self.backgroundMenuRow setColumns:[NSMutableArray arrayWithArray:@[backgroundWhite, backgroundSepia]]];
-                    [self.backgroundMenuRow setIsMoreButton:NO];
+//                    [self.backgroundMenuRow setIsMoreButton:NO];
                     [self.backgroundMenuRow setIsModal:YES];
                     [self.backgroundMenuRow.button setImage:[UIImage imageNamed:@"background1"] forState:UIControlStateNormal];
                     break;
@@ -835,7 +834,7 @@ const int SWIPE_PREVIOUS = 1;
         [backgroundMenuRow setIsModal:NO];
         [backgroundMenuRow setHideOnExpand:NO];
         [backgroundMenuRow.button setBackgroundColor:[UIColor colorWithWhite:0.97f alpha:0.95f]];
-        backgroundMenuRow.isMoreButton = YES;
+//        backgroundMenuRow.isMoreButton = YES;
     }
     return backgroundMenuRow;
 }

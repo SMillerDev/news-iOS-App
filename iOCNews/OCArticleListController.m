@@ -30,17 +30,13 @@
  
  *************************************************************************/
 
+#import <MMDrawerController/UIViewController+MMDrawerController.h>
+#import <TSMessages/TSMessage.h>
+#import <HTMLString/HTMLString-swift.h>
 #import "OCArticleListController.h"
-#import "OCArticleCell.h"
-#import "OCWebController.h"
-#import "NSString+HTML.h"
-#import "AFNetworking.h"
 #import "OCArticleImage.h"
-#import "TSMessage.h"
 #import "OCNewsHelper.h"
-#import "Item.h"
 #import "objc/runtime.h"
-#import "UIViewController+MMDrawerController.h"
 #import "UIImageView+OCWebCache.h"
 
 @interface OCArticleListController () <UIGestureRecognizerDelegate> {
@@ -359,7 +355,7 @@
         cell.dateLabel.font = [self makeItalic:[UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]];
         cell.summaryLabel.font = [self makeSmaller:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
         
-        cell.titleLabel.text = [item.title stringByConvertingHTMLToPlainText];
+        cell.titleLabel.text = [item.title stringByRemovingHTMLEntities];
         NSString *dateLabelText = @"";
         
         NSNumber *dateNumber = item.pubDate;
@@ -421,7 +417,7 @@
                 summary = [summary stringByReplacingOccurrencesOfString:sub withString:@""];
             }
         }
-        cell.summaryLabel.text = [summary stringByConvertingHTMLToPlainText];
+        cell.summaryLabel.text = [summary stringByRemovingHTMLEntities];
         cell.starImage.image = nil;
         if (item.starredValue) {
             cell.starImage.image = [UIImage imageNamed:@"star_icon"];

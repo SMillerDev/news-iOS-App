@@ -31,14 +31,11 @@
  *************************************************************************/
 
 #import "OCAppDelegate.h"
-#import "AFNetworkActivityIndicatorManager.h"
 #import "OCNewsHelper.h"
-#import <KSCrash/KSCrash.h>
-#import <KSCrash/KSCrashInstallationEmail.h>
+#import <KSCrash/KSCrash-umbrella.h>
 #import <KSCrash/KSCrashInstallation+Alert.h>
-#import "FDTopDrawerController.h"
-#import "FDBottomDrawerController.h"
-#import "PDKeychainBindings.h"
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import <PDKeychainBindingsController/PDKeychainBindings.h>
 
 @implementation OCAppDelegate
 
@@ -107,7 +104,7 @@
 }
 
 - (KSCrashInstallation*) makeEmailInstallation {
-    NSString* emailAddress = @"support@peterandlinda.com";
+    NSString* emailAddress = @"support@seanmolenaar.eu";
     
     KSCrashInstallationEmail* email = [KSCrashInstallationEmail sharedInstance];
     email.recipients = @[emailAddress];

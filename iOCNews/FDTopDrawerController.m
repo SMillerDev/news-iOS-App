@@ -6,8 +6,8 @@
 //
 //
 
+#import <MMDrawerController/MMDrawerVisualState.h>
 #import "FDTopDrawerController.h"
-#import "MMDrawerVisualState.h"
 #import "OCWebController.h"
 
 @interface FDTopDrawerController ()
@@ -44,6 +44,11 @@
         }
     }];
     self.maximumLeftDrawerWidth = [UIScreen mainScreen].bounds.size.width;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

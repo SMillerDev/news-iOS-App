@@ -31,7 +31,7 @@
  *************************************************************************/
 
 #import "OCArticleImage.h"
-#import "HTMLParser.h"
+#import <Objective_C_HMTL_Parser/HTMLParser.h>
 
 @implementation OCArticleImage
 

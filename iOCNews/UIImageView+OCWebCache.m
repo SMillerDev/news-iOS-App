@@ -21,10 +21,17 @@ static char operationArticleImageKey;
     if (url)
     {
         __weak UIImageView *wself = self;
-        id<SDWebImageOperation> operation = [SDWebImageManager.sharedManager downloadImageWithURL:url options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        id<SDWebImageOperation> operation = [SDWebImageManager.sharedManager loadImageWithURL:url
+                                                                                      options:0
+                                                                                     progress:nil
+                                                                                    completed:^(UIImage *image,
+                                                                                                NSData *data,
+                                                                                                NSError *error,
+                                                                                                SDImageCacheType cacheType,
+                                                                                                BOOL finished,
+                                                                                                NSURL *imageURL) {
             if (!wself) return;
-            dispatch_main_sync_safe(^
-                                    {
+            dispatch_async(DISPATCH_TARGET_QUEUE_DEFAULT, ^{
                                         __strong UIImageView *sself = wself;
                                         if (!sself) return;
                                         if (image) {
