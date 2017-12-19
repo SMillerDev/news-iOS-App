@@ -31,27 +31,21 @@
  *************************************************************************/
 
 #import "OCArticleImage.h"
-#import <Objective_C_HMTL_Parser/HTMLParser.h>
+#import <HTMLKit/HTMLKit.h>
 
 @implementation OCArticleImage
 
 + (NSString *) findImage:(NSString *)htmlString {
     __block NSString *result = nil;
-    NSError *error = nil;
-    HTMLParser *parser = [[HTMLParser alloc] initWithString:htmlString error:&error];
-    
-    if (error) {
-//        NSLog(@"Error: %@", error);
-        return result;
-    }
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:htmlString];
     
     //parse body
-    HTMLNode *bodyNode = [parser body];
+    HTMLElement *bodyNode = parser.document.body;
     
-    NSArray *inputNodes = [bodyNode findChildTags:@"img"];
-    [inputNodes enumerateObjectsUsingBlock:^(HTMLNode *inputNode, NSUInteger idx, BOOL *stop) {
+    NSArray *inputNodes = [bodyNode elementsMatchingSelector:[CSSSelector selectorWithString:@"img"]];
+    [inputNodes enumerateObjectsUsingBlock:^(HTMLElement *inputNode, NSUInteger idx, BOOL *stop) {
         if (inputNode) {
-            result = [inputNode getAttributeNamed:@"src"];
+            result = inputNode.attributes[@"src"];
             
             [[OCArticleImage imagesToSkip] enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
                 if ([result rangeOfString:name].location != NSNotFound) {
@@ -59,7 +53,7 @@
                     *stop = YES;
                 }
             }];
-            NSString *height = [inputNode getAttributeNamed:@"height"];
+            NSString *height = inputNode.attributes[@"height"];
             if ([height isEqualToString:@"1"]) {
                 result = nil;
             }

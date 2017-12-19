@@ -36,7 +36,7 @@
 #import "OCSharingProvider.h"
 #import <MMDrawerController/UIViewController+MMDrawerController.h>
 #import <TUSafariActivity/TUSafariActivity.h>
-#import <Objective_C_HMTL_Parser/HTMLParser.h>
+#import <HTMLKit/HTMLKit.h>
 #import "FDTopDrawerController.h"
 #import "readable.h"
 
@@ -954,21 +954,15 @@ const int SWIPE_PREVIOUS = 1;
 
 - (NSString *) fixRelativeUrl:(NSString *)htmlString baseUrlString:(NSString*)base {
     __block NSString *result = [htmlString copy];
-    NSError *error = nil;
-    HTMLParser *parser = [[HTMLParser alloc] initWithString:htmlString error:&error];
-    
-    if (error) {
-        //NSLog(@"Error: %@", error);
-        return result;
-    }
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:htmlString];
 
     //parse body
-    HTMLNode *bodyNode = [parser body];
+    HTMLNode *bodyNode = [parser document].body;
 
-    NSArray *inputNodes = [bodyNode findChildTags:@"img"];
-    [inputNodes enumerateObjectsUsingBlock:^(HTMLNode *inputNode, NSUInteger idx, BOOL *stop) {
+    NSArray *inputNodes = [bodyNode elementsMatchingSelector:[CSSSelector selectorWithString:@"img"]];
+    [inputNodes enumerateObjectsUsingBlock:^(HTMLElement *inputNode, NSUInteger idx, BOOL *stop) {
         if (inputNode) {
-            NSString *src = [inputNode getAttributeNamed:@"src"];
+            NSString *src = inputNode.attributes[@"src"];
             if (src != nil) {
                 NSURL *url = [NSURL URLWithString:src relativeToURL:[NSURL URLWithString:base]];
                 if (url != nil) {
@@ -979,10 +973,10 @@ const int SWIPE_PREVIOUS = 1;
         }
     }];
     
-    inputNodes = [bodyNode findChildTags:@"a"];
-    [inputNodes enumerateObjectsUsingBlock:^(HTMLNode *inputNode, NSUInteger idx, BOOL *stop) {
+    inputNodes = [bodyNode elementsMatchingSelector:[CSSSelector selectorWithString:@"a"]];
+    [inputNodes enumerateObjectsUsingBlock:^(HTMLElement *inputNode, NSUInteger idx, BOOL *stop) {
         if (inputNode) {
-            NSString *src = [inputNode getAttributeNamed:@"href"];
+            NSString *src = inputNode.attributes[@"href"];
             if (src != nil) {
                 NSURL *url = [NSURL URLWithString:src relativeToURL:[NSURL URLWithString:base]];
                 if (url != nil) {
@@ -1165,7 +1159,7 @@ const int SWIPE_PREVIOUS = 1;
 - (NSString*)replaceYTIframe:(NSString *)html {
     __block NSString *result = html;
     NSError *error = nil;
-    HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:html];
     
     if (error) {
 //        NSLog(@"Error: %@", error);
@@ -1173,19 +1167,19 @@ const int SWIPE_PREVIOUS = 1;
     }
     
     //parse body
-    HTMLNode *bodyNode = [parser body];
+    HTMLElement *bodyNode = parser.document.body;
     
-    NSArray *inputNodes = [bodyNode findChildTags:@"iframe"];
-    [inputNodes enumerateObjectsUsingBlock:^(HTMLNode *inputNode, NSUInteger idx, BOOL *stop) {
+    NSArray *inputNodes = [bodyNode elementsMatchingSelector:[CSSSelector selectorWithString:@"iframe"]];
+    [inputNodes enumerateObjectsUsingBlock:^(HTMLElement *inputNode, NSUInteger idx, BOOL *stop) {
         if (inputNode) {
-            NSString *src = [inputNode getAttributeNamed:@"src"];
+            NSString *src = inputNode.attributes[@"src"];
             if (src && [src rangeOfString:@"youtu"].location != NSNotFound) {
                 NSString *videoID = [self extractYoutubeVideoID:src];
                 if (videoID) {
 //                    NSLog(@"Raw: %@", [inputNode rawContents]);
                     
-                    NSString *height = [inputNode getAttributeNamed:@"height"];
-                    NSString *width = [inputNode getAttributeNamed:@"width"];
+                    NSString *height = inputNode.attributes[@"height"];
+                    NSString *width = inputNode.attributes[@"width"];
                     NSString *heightString = @"";
                     NSString *widthString = @"";
                     if (height.length > 0) {
@@ -1195,14 +1189,14 @@ const int SWIPE_PREVIOUS = 1;
                         widthString = [NSString stringWithFormat:@"width=\"%@\"", width];
                     }
                     NSString *embed = [NSString stringWithFormat:@"<embed id=\"yt\" src=\"http://www.youtube.com/embed/%@\" type=\"text/html\" frameborder=\"0\" %@ %@></embed>", videoID, heightString, widthString];
-                    result = [result stringByReplacingOccurrencesOfString:[inputNode rawContents] withString:embed];
+                    result = [result stringByReplacingOccurrencesOfString:[inputNode innerHTML] withString:embed];
                 }
             }
             if (src && [src rangeOfString:@"vimeo"].location != NSNotFound) {
                 NSString *videoID = [self extractVimeoVideoID:src];
                 if (videoID) {                    
-                    NSString *height = [inputNode getAttributeNamed:@"height"];
-                    NSString *width = [inputNode getAttributeNamed:@"width"];
+                    NSString *height = inputNode.attributes[@"height"];
+                    NSString *width = inputNode.attributes[@"width"];
                     NSString *heightString = @"";
                     NSString *widthString = @"";
                     if (height.length > 0) {
@@ -1212,7 +1206,7 @@ const int SWIPE_PREVIOUS = 1;
                         widthString = [NSString stringWithFormat:@"width=\"%@\"", width];
                     }
                     NSString *embed = [NSString stringWithFormat:@"<iframe id=\"vimeo\" src=\"http://player.vimeo.com/video/%@\" type=\"text/html\" frameborder=\"0\" %@ %@></iframe>", videoID, heightString, widthString];
-                    result = [result stringByReplacingOccurrencesOfString:[inputNode rawContents] withString:embed];
+                    result = [result stringByReplacingOccurrencesOfString:[inputNode innerHTML] withString:embed];
                 }
             }
         }

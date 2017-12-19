@@ -28,13 +28,13 @@
 		144ABD491FE99A8500907D13 /* libpcreposix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 144ABD451FE99A8500907D13 /* libpcreposix.a */; };
 		144ABD4A1FE99A8500907D13 /* libpcre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 144ABD461FE99A8500907D13 /* libpcre.a */; };
 		144ABD4B1FE99A8500907D13 /* libpcrecpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 144ABD471FE99A8500907D13 /* libpcrecpp.a */; };
-		144ABD4D1FE99ACD00907D13 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 144ABD4C1FE99ACD00907D13 /* libxml2.2.dylib */; };
 		144ABD4F1FE99ADF00907D13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144ABD4E1FE99ADF00907D13 /* UIKit.framework */; };
 		144ABD511FE99AF800907D13 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144ABD501FE99AF800907D13 /* CoreData.framework */; };
 		144ABD531FE99B2500907D13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144ABD521FE99B2500907D13 /* CoreGraphics.framework */; };
 		144ABD551FE99B3C00907D13 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144ABD541FE99B3C00907D13 /* MessageUI.framework */; };
 		144ABD571FE99C5200907D13 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 144ABD561FE99C5200907D13 /* WebKit.framework */; };
 		144ABD591FE9A9E900907D13 /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = 144ABD581FE9A9E900907D13 /* TSMessagesDefaultDesign.json */; };
+		144ABD5F1FE9AE6400907D13 /* OCTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144ABD5E1FE9AE6300907D13 /* OCTextView.swift */; };
 		147D24041FE94BA10013B9CB /* rd_list.c in Sources */ = {isa = PBXBuildFile; fileRef = D01ACABA17B83637005D1463 /* rd_list.c */; };
 		147D24051FE94BA10013B9CB /* readable.c in Sources */ = {isa = PBXBuildFile; fileRef = D01ACABC17B83637005D1463 /* readable.c */; };
 		D00A956319E6226D00B9B8E4 /* OCSharingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D00A956219E6226D00B9B8E4 /* OCSharingProvider.m */; };
@@ -60,7 +60,6 @@
 		D08D83B718161453005A75F0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D08D83B618161453005A75F0 /* Settings.bundle */; };
 		D09B14A41C39E2A50019DB51 /* UIImageView+OCWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D09B14A21C39E2A50019DB51 /* UIImageView+OCWebCache.m */; };
 		D0A33F581885B91B00C6DA92 /* OCBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A33F571885B91B00C6DA92 /* OCBadgeView.m */; };
-		D0A33F6018876CF700C6DA92 /* OCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A33F5F18876CF700C6DA92 /* OCTextView.m */; };
 		D0BCAA30177900C300C965F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0BCAA2E177900C300C965F4 /* InfoPlist.strings */; };
 		D0BCAA32177900C400C965F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BCAA31177900C300C965F4 /* main.m */; };
 		D0BCAA36177900C400C965F4 /* OCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BCAA35177900C400C965F4 /* OCAppDelegate.m */; };
@@ -121,6 +120,8 @@
 		144ABD541FE99B3C00907D13 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		144ABD561FE99C5200907D13 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		144ABD581FE9A9E900907D13 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
+		144ABD5D1FE9AE6300907D13 /* iOCNews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOCNews-Bridging-Header.h"; sourceTree = "<group>"; };
+		144ABD5E1FE9AE6300907D13 /* OCTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCTextView.swift; sourceTree = "<group>"; };
 		328C8B4AFFC8E79B9314317E /* Pods_iOCNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOCNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		459B54AFF01D88AFCDC56D45 /* Pods-iOCNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOCNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOCNews/Pods-iOCNews.debug.xcconfig"; sourceTree = "<group>"; };
 		D00A956119E6226D00B9B8E4 /* OCSharingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSharingProvider.h; sourceTree = "<group>"; };
@@ -170,8 +171,6 @@
 		D0A33F2B187F5BF900C6DA92 /* News 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "News 4.xcdatamodel"; sourceTree = "<group>"; };
 		D0A33F561885B91B00C6DA92 /* OCBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCBadgeView.h; sourceTree = "<group>"; };
 		D0A33F571885B91B00C6DA92 /* OCBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCBadgeView.m; sourceTree = "<group>"; };
-		D0A33F5E18876CF700C6DA92 /* OCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTextView.h; sourceTree = "<group>"; };
-		D0A33F5F18876CF700C6DA92 /* OCTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTextView.m; sourceTree = "<group>"; };
 		D0BCAA22177900C300C965F4 /* iOCNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOCNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BCAA2D177900C300C965F4 /* iOCNews-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOCNews-Info.plist"; sourceTree = "<group>"; };
 		D0BCAA2F177900C300C965F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -216,7 +215,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				144ABD4D1FE99ACD00907D13 /* libxml2.2.dylib in Frameworks */,
 				144ABD491FE99A8500907D13 /* libpcreposix.a in Frameworks */,
 				144ABD4B1FE99A8500907D13 /* libpcrecpp.a in Frameworks */,
 				144ABD4A1FE99A8500907D13 /* libpcre.a in Frameworks */,
@@ -374,14 +372,14 @@
 				D01ACAFB17B969FE005D1463 /* NSDictionary+HandleNull.m */,
 				D0A33F561885B91B00C6DA92 /* OCBadgeView.h */,
 				D0A33F571885B91B00C6DA92 /* OCBadgeView.m */,
-				D0A33F5E18876CF700C6DA92 /* OCTextView.h */,
-				D0A33F5F18876CF700C6DA92 /* OCTextView.m */,
+				144ABD5E1FE9AE6300907D13 /* OCTextView.swift */,
 				D09B14A21C39E2A50019DB51 /* UIImageView+OCWebCache.m */,
 				D09B14A31C39E2A50019DB51 /* UIImageView+OCWebCache.h */,
 				D0BCAA2C177900C300C965F4 /* Supporting Files */,
 				D0BCAC38178104FB00C965F4 /* Resources */,
 				D08D83B618161453005A75F0 /* Settings.bundle */,
 				D0BF490C17E4DCF800CB9311 /* Images.xcassets */,
+				144ABD5D1FE9AE6300907D13 /* iOCNews-Bridging-Header.h */,
 			);
 			path = iOCNews;
 			sourceTree = "<group>";
@@ -472,6 +470,7 @@
 				TargetAttributes = {
 					D0BCAA21177900C300C965F4 = {
 						DevelopmentTeam = B6S5V56E82;
+						LastSwiftMigration = 0920;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -628,13 +627,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOCNews/Pods-iOCNews-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/HTMLKit/HTMLKit.framework",
 				"${BUILT_PRODUCTS_DIR}/HTMLString/HTMLString.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
 				"${BUILT_PRODUCTS_DIR}/JCGridMenu/JCGridMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/KSCrash/KSCrash.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/MMDrawerController+Storyboard/MMDrawerController_Storyboard.framework",
-				"${BUILT_PRODUCTS_DIR}/Objective-C-HMTL-Parser/Objective_C_HMTL_Parser.framework",
 				"${BUILT_PRODUCTS_DIR}/PDKeychainBindingsController/PDKeychainBindingsController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/TSMessages/TSMessages.framework",
@@ -643,13 +643,14 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTMLKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTMLString.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JCGridMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSCrash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController_Storyboard.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Objective_C_HMTL_Parser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PDKeychainBindingsController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TSMessages.framework",
@@ -678,6 +679,7 @@
 				D0BCAA77177909A600C965F4 /* OCWebController.m in Sources */,
 				D09B14A41C39E2A50019DB51 /* UIImageView+OCWebCache.m in Sources */,
 				D02300231A5A097500B354E0 /* FDBottomDrawerController.m in Sources */,
+				144ABD5F1FE9AE6400907D13 /* OCTextView.swift in Sources */,
 				D00A956319E6226D00B9B8E4 /* OCSharingProvider.m in Sources */,
 				D0BCABDA1779112000C965F4 /* PHPrefViewController.m in Sources */,
 				D0BCAC24177F80BC00C965F4 /* OCAPIClient.m in Sources */,
@@ -697,7 +699,6 @@
 				D04AD6601807125600FF6056 /* Folder.m in Sources */,
 				D08D832E18108D9B005A75F0 /* OCFolderTableViewController.m in Sources */,
 				D0F8275017B2D83400BE84D7 /* OCFeedSettingsController.m in Sources */,
-				D0A33F6018876CF700C6DA92 /* OCTextView.m in Sources */,
 				D0E89F581836E03A005F8CAF /* OCSettingsController.m in Sources */,
 				D01ACAFC17B969FE005D1463 /* NSDictionary+HandleNull.m in Sources */,
 			);
@@ -742,7 +743,6 @@
 		D0BCAA43177900C400C965F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -783,7 +783,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherit)";
@@ -797,7 +796,6 @@
 		D0BCAA44177900C400C965F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -830,7 +828,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "$(inherit)";
@@ -849,6 +846,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B6S5V56E82;
@@ -857,7 +855,7 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOCNews/iOCNews-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "iOCNews/iOCNews-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -865,12 +863,44 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/pcre/lib",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"HTMLKit\"",
+					"-framework",
+					"\"HTMLString\"",
+					"-framework",
+					"\"HexColors\"",
+					"-framework",
+					"\"JCGridMenu\"",
+					"-framework",
+					"\"KSCrash\"",
+					"-framework",
+					"\"KeychainSwift\"",
+					"-framework",
+					"\"MMDrawerController\"",
+					"-framework",
+					"\"MMDrawerController_Storyboard\"",
+					"-framework",
+					"\"PDKeychainBindingsController\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"TSMessages\"",
+					"-framework",
+					"\"TUSafariActivity\"",
+					"-lxml2",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.iNCNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				STRIP_STYLE = debugging;
+				SWIFT_OBJC_BRIDGING_HEADER = "iOCNews/iOCNews-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/iOSPorts/include";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -882,6 +912,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B6S5V56E82;
@@ -890,7 +921,7 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOCNews/iOCNews-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "iOCNews/iOCNews-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -898,12 +929,43 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/pcre/lib",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"HTMLKit\"",
+					"-framework",
+					"\"HTMLString\"",
+					"-framework",
+					"\"HexColors\"",
+					"-framework",
+					"\"JCGridMenu\"",
+					"-framework",
+					"\"KSCrash\"",
+					"-framework",
+					"\"KeychainSwift\"",
+					"-framework",
+					"\"MMDrawerController\"",
+					"-framework",
+					"\"MMDrawerController_Storyboard\"",
+					"-framework",
+					"\"PDKeychainBindingsController\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"TSMessages\"",
+					"-framework",
+					"\"TUSafariActivity\"",
+					"-lxml2",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = eu.seanmolenaar.iNCNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				STRIP_STYLE = debugging;
+				SWIFT_OBJC_BRIDGING_HEADER = "iOCNews/iOCNews-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/iOSPorts/include";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

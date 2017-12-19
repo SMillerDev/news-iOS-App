@@ -15,12 +15,14 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - HexColors (2.2.1)
+  - HTMLKit (2.1.2)
   - HTMLString (3.0.0)
   - JCGridMenu (0.0.1):
     - JCGridMenu/Core (= 0.0.1)
     - JCGridMenu/Images (= 0.0.1)
   - JCGridMenu/Core (0.0.1)
   - JCGridMenu/Images (0.0.1)
+  - KeychainSwift (10.0.0)
   - KSCrash (1.15.16):
     - KSCrash/Installations (= 1.15.16)
   - KSCrash/Installations (1.15.16):
@@ -98,7 +100,6 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.6.0):
     - MMDrawerController/Core
-  - Objective-C-HMTL-Parser (0.0.1)
   - PDKeychainBindingsController (0.0.1)
   - SDWebImage (4.2.2):
     - SDWebImage/Core (= 4.2.2)
@@ -109,12 +110,13 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1)
+  - HTMLKit (~> 2.1)
   - HTMLString (~> 3.0)
-  - JCGridMenu
+  - JCGridMenu (~> 0.0)
+  - KeychainSwift (~> 10.0)
   - KSCrash (~> 1.15)
   - MMDrawerController+Storyboard (~> 0.0)
-  - Objective-C-HMTL-Parser (~> 0.0)
-  - PDKeychainBindingsController
+  - PDKeychainBindingsController (~> 0.0)
   - SDWebImage (~> 4.2)
   - TSMessages (~> 0.9)
   - TUSafariActivity (~> 1.0)
@@ -122,17 +124,18 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  HTMLKit: 5b84944079ad0bd93d19dff13d06afaa3066790f
   HTMLString: 57f421a65b10c4eba75a16c329d1cc82a2167ab3
   JCGridMenu: 3ff63622f20769593b9db512b7595f0ce2c81dcc
+  KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
   KSCrash: e4cda5c8612c5f9478defcf43418f24870d313f4
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   MMDrawerController+Storyboard: c98f86c0f32cdef1d466d19a7da3ad2fc6c6ac00
-  Objective-C-HMTL-Parser: cc468311d0ae434646c56aae3b62426977f19ca0
   PDKeychainBindingsController: fa8cb3cf99f2ea9240d61066ed0549f34e2cec3c
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
-PODFILE CHECKSUM: 55e630f0decfd8d9d547fbfbb497e0673744db29
+PODFILE CHECKSUM: 51195a459f8e8559a21d97352395825efe1d1770
 
 COCOAPODS: 1.3.1

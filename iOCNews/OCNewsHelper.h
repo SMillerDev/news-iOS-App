@@ -32,6 +32,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
 #import "Folder.h"
 #import "Feed.h"
 #import "Item.h"
